@@ -8,6 +8,10 @@ class App extends React.Component {
 
     state = {videos: [], selectedVideo: null };
 
+    componentDidMount() {
+        this.onTextSubmit('default result');
+    };
+
     onTextSubmit = async text => {
         const response = await youtube.get('/search', {
             params: {
